@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow"
+  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Solid"
+  rel="stylesheet">
+  <title> McConnell Family Farm</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/web.css" rel="stylesheet">
+  <link href="css/careers.css" rel="stylesheet">
+  <meta name="viewport" content="width-device-width,
+  intial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button"
+                class="collapsed navbar-toggle"
+                data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-9"
+                aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="home.html" class="navbar-brand">McConnell Family Farm</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+        <ul class="nav navbar-nav">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li  class="active"><a href="careers.html">Careers</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="main" style="margin-top:60px">
+  <div class="border">
+    <h2>Are you interested in becoming one of the team?</h2>
+    <p>Check out our job opportunities below and
+      submit the attached form if you're interested.</p>
+    <p>We look forward to hearing from you!</p>
+    <div class="job-list">
+      <ul>
+        <li>
+          <div class="job-item">
+            <ul id="fh">
+              <li>Farm Hand</li>
+              <li>up to 40 hours / week</li>
+              <li>£10 / hour</li>
+              <li><a href="#modal-main" class="hand" rel="modal:open">Inquire?</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="job-item">
+          <ul id="rm">
+            <li>Relief Milker</li>
+            <li>30 hours / week: 3 hour milking, morning and evening, Mon-Fri</li>
+            <li>£15 / hour</li>
+            <li><a href="#modal-main" class="milker" rel="modal:open">Inquire?</a></li>
+          </ul>
+          </div>
+        </li>
+        <li>
+          <div class="job-item">
+          <ul id="man">
+            <li>Farm Manager</li>
+            <li>Full Time</li>
+            <li>Salary Negotiable</li>
+            <li><a href="#modal-main" class="manager" rel="modal:open">Inquire?</a></li>
+          </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  <div id="modal-main" class="modal">
+    <h2>Interested?</h2>
+    <h2 id="job-title">Job Name</h2>
+    <form class="modal-form" action="" method="post">
+      <label for="first-name">First Name: </label>
+      <input id="first-name-field" type="text" name="first-name">
+      <label for="surname-field">Last Name: </label>
+      <input id="surname-field" type="text" name="surname">
+      <label for="DOB-field">Date of birth: </label>
+      <input id="DOB-field" type="date" name="date-of-birth">
+      <label for="contact-field">Email: </label>
+      <input id="contact-field" type="email" name="contact-info">
+      <input id="submit" type="submit" name="submit" value="submit">
+    </form>
+  </div>
+<script>
+  var job = "";
+  $('.job-list').find('a').click(function(){
+    if ($(this).hasClass('hand')){
+      job = "Farm Hand";
+    } else if ($(this).hasClass('milker')) {
+      job = "Relief Milker";
+    } else if ($(this).hasClass('manager')) {
+      job = "Farm Manager";
+    }
+    $('#job-title').text(job);
+  })
+
+  $('#submit').click(function(e){
+    var name = $("#first-name").val();
+    var surname = $("#surname-field").val();
+    var dob = $("#DOB-field").val();
+    var email = $("#contact-field").val();
+    if (name == '' || surname == '' || email == '' || dob == '') {
+      alert("Please complete all fields");
+    }
+  });
+
+</script>
+</div>
+</div>
+
+
+</body>
+</html>
